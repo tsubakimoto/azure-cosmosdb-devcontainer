@@ -6,7 +6,7 @@ Template repository of devcontainer using [Azure Cosmos DB Emulator](https://lea
 
 | Metadata | Value |  
 |----------|-------|
-| *Contributors* | Yuta Matsumura |
+| *Contributors* | [Yuta Matsumura](https://github.com/tsubakimoto) |
 | *Categories* | Services, Azure |
 | *Definition type* | Docker Compose |
 | *Published image architecture(s)* | x86-64 |
