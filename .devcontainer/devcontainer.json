@@ -16,7 +16,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-azuretools.vscode-docker",
-				"ms-azuretools.vscode-cosmosdb"
+				"ms-azuretools.vscode-cosmosdb",
+				"ms-dotnettools.csharp"
 			]
 		}
 	},

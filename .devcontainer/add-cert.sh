@@ -15,7 +15,7 @@ done
 
 sudo update-ca-certificates
 
-if [ ! -f ./test-project/appsettings.json ]
+if [ ! -f ./test-project/appsettings.Development.json ]
 then
-  echo '{ "Cosmos": { "Endpoint" : "'$COSMOS__ENDPOINT'" } }' >> ./test-project/appsettings.json
+  echo '{ "Cosmos": { "Endpoint" : "'$COSMOS__ENDPOINT'" } }' >> ./test-project/appsettings.Development.json
 fi

@@ -3,9 +3,13 @@
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Configuration;
 
+// Get an environment name from environment variable
+string environmentName = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
+
 // Build a config object, using env vars and JSON providers.
 IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{environmentName}.json")
     .AddEnvironmentVariables()
     .Build();
 
