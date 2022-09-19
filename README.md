@@ -1,7 +1,5 @@
 # C# (.NET) and Azure Cosmos DB
 
-Template repository of devcontainer using [Azure Cosmos DB Emulator](https://learn.microsoft.com/en-us/azure/cosmos-db/linux-emulator).
-
 ## Summary
 
 | Metadata | Value |  
@@ -10,10 +8,10 @@ Template repository of devcontainer using [Azure Cosmos DB Emulator](https://lea
 | *Categories* | Services, Azure |
 | *Definition type* | Docker Compose |
 | *Published image architecture(s)* | x86-64 |
-| *Available image variants* | 3.1-focal, 6.0-focal |
+| *Available image variants* | 6.0-focal |
 | *Works in Codespaces* | Yes |
 | *Container host OS support* | Linux, macOS |
-| *Container OS* | Ubuntu (`-focal`) |
+| *Container OS* | Ubuntu (`-focal`), Debian (`-bullseye`) |
 | *Languages, platforms* | .NET, .NET Core, C#, Microsoft Azure |
 
 ## Descirption
@@ -26,8 +24,16 @@ This definition creates two containers, one for C# (.NET) and one for [Azure Cos
 While the definition itself works unmodified, you can select the version of **YOUR RUNTIME HERE** the container uses by updating the `VARIANT` arg in the included `.devcontainer/devcontainer.json` file.
 
 ```json
-"args": { "VARIANT": "buster" }
+"args": { "VARIANT": "6.0-bullseye" }
 ```
+
+### Using the forwardPorts property
+
+```json
+"forwardPorts": [ 8081 ]
+```
+
+This port is used by Azure Cosmos DB Emulator to expose Explorer. The explorer can be accessed at https://localhost:8081/_explorer/index.html .
 
 ### Adding the definition to a project or codespace
 
@@ -42,3 +48,17 @@ While the definition itself works unmodified, you can select the version of **YO
 4. Select this definition. You may also need to select **Show All Definitions...** for it to appear.
 
 5. Finally, press <kbd>F1</kbd> and run **Remote-Containers: Reopen Folder in Container** or **Codespaces: Rebuild Container** to start using the definition.
+
+## Testing the definition
+
+This definition includes some test code that will help you verify it is working as expected on your system. Follow these steps:
+
+1. If this is your first time using a development container, please follow the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started) to set up your machine.
+2. Clone this repository.
+3. Start VS Code, press <kbd>F1</kbd>, and select **Remote-Containers: Open Folder in Container...**
+4. Select the `containers/azure-cosmosdb-emulator` folder.
+5. After the folder has opened in the container, if prompted to restore packages in a notification, click "Restore".
+6. After packages are restored, run `dotnet run --project test-project/app.csproj` in `.
+7. Open the browser to [https://localhost:8081/_explorer/index.html](https://localhost:8081/_explorer/index.html).
+8. You should see "Azure Cosmos DB Emulator Explorer" and see added items.
+9. From here, you can add breakpoints or edit the contents of the `test-project` folder to do further testing.
