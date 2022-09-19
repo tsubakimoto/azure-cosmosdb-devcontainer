@@ -16,6 +16,9 @@ Template repository of devcontainer using [Azure Cosmos DB Emulator](https://lea
 | *Container OS* | Ubuntu (`-focal`) |
 | *Languages, platforms* | .NET, .NET Core, C#, Microsoft Azure |
 
+## Descirption
+This definition creates two containers, one for C# (.NET) and one for [Azure Cosmos DB Emulator](https://learn.microsoft.com/en-us/azure/cosmos-db/linux-emulator). VS Code will attach to the .NET Core container, and from within that container the Azure Cosmos DB Emulator container will be available on **`localhost`** port 8081. For more on the configuration of Azure Cosmos DB Emulator, see the document [Configuration options](https://learn.microsoft.com/en-us/azure/cosmos-db/linux-emulator#configuration-options)
+
 ## Using this definition
 
 **[Optional] Include any special setup requirements here. For example:**
