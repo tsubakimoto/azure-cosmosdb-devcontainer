@@ -1,4 +1,4 @@
-# Azure CosmosDB devcontainer
+# Azure CosmosDB Emulator
 
 Template repository of devcontainer using [Azure Cosmos DB Emulator](https://learn.microsoft.com/en-us/azure/cosmos-db/linux-emulator).
 
