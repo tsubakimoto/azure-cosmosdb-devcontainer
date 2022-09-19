@@ -14,3 +14,8 @@ until sudo curl -ksf "${COSMOS__ENDPOINT}/_explorer/emulator.pem" -o '/usr/local
 done
 
 sudo update-ca-certificates
+
+if [ ! -f ./test-project/appsettings.json ]
+then
+  echo '{ "Cosmos": { "Endpoint" : "'$COSMOS__ENDPOINT'" } }' >> ./test-project/appsettings.json
+fi
